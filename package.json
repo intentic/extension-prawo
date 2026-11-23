@@ -1,0 +1,28 @@
+{
+    "name": "intentic-prawo",
+    "version": "1.0.0",
+    "description": "Polish acts from the Sejm's ELI API and court rulings from SAOS, as an agent CLI with citations and an offline cache",
+    "license": "MIT",
+    "private": true,
+    "type": "module",
+    "packageManager": "pnpm@12.10.1",
+    "scripts": {
+        "build": "vite build",
+        "typecheck": "tsc -p tsconfig.json && intentic-kit-check",
+        "test": "vitest run",
+        "verify": "pnpm run build && pnpm run typecheck && pnpm run test"
+    },
+    "dependencies": {
+        "@intentic/base": "^1.430.0",
+        "@intentic/sandbox-contract": "^1.430.0",
+        "zod": "^4.6.7"
+    },
+    "devDependencies": {
+        "@intentic/extension-ui": "^1.430.0",
+        "@intentic/extension-api": "^1.430.0",
+        "@types/node": "^24.19.2",
+        "typescript": "^6.0.3",
+        "vite": "^8.3.5",
+        "vitest": "^5.0.5"
+    }
+}

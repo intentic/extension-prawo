@@ -1,0 +1,11 @@
+# A standalone extension is NOT a pnpm workspace, and this file is not here to make it one. It exists for the
+# settings pnpm reads only from here:
+#
+# allowBuilds: pnpm refuses to run a dependency's install script until that dependency is approved BY NAME.
+#   esbuild   — vite's bundler. Its postinstall puts the platform binary in place; without it `pnpm build` dies
+#               on a missing binary, which reads like a broken repo rather than an unapproved script.
+allowBuilds:
+  esbuild: true
+# The SDK line this repo is built against is hours old; pnpm's release-age floor would otherwise hold it back.
+minimumReleaseAgeExclude:
+  - '@intentic/*'
